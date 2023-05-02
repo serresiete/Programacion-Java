@@ -16,5 +16,5 @@ public class articuloApp {
         System.out.println("Ha comprado un " + nombre + " cuyo precio es: " + precio + "€ y con un IVA del " + (iva*100) + "% se queda con un PVP de: " + piva + "€");
     }
     
-    
+     
 }
