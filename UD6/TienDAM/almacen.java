@@ -3,23 +3,28 @@ package TienDAM;
 public class almacen {
     // Atributos
     // Creamos una variable constante para darle longitud al array
-    final static int maxArticulos = 100;
+    private final int maxArticulos = 100;
     // Creamos el array
-    static articulo[] articulos = new articulo[maxArticulos];
+    private articulo[] articulos = new articulo[maxArticulos];
     // Creamos una variable estatica contador para llevar la cuenta del array
-    private static int cont = 0;
+    private int cont = 0;
     // Y creamos otra para que el usuario ponga el lugar que quiera
-    private static int indice = 0;
+    private int indice = 0;
+    //Getters y Setters
+    public articulo[] getArticulos() {
+        return articulos;
+    }
 
     // Metodos
     // Creamos un metodo para añadir un articulo nuevo al almacen (al array de
     // articulo)
-    public static void añadirArticulo(String nombre, double precio, porcentajes iva, int cantidad) {
-        articulos[cont] = new articulo(nombre, precio, iva, cantidad, cont);
+    public void añadirArticulo(String nombre, double precio, porcentajes iva, int cantidad) {
+        articulo a = new articulo(nombre, precio, iva, cantidad, cont);
+        articulos[cont] = a;
         System.out.println("Articulo añadido.");
     }
 
-    public static void eliminarArticulo(int ID) {
+    public void eliminarArticulo(int ID) {
         indice = ID - 1;
         // Recorremos el array con un bucle
         for (int i = 0; i < articulos.length; i++) {
@@ -30,12 +35,12 @@ public class almacen {
         cont--;
     }
 
-    public static void ModificarPrecio(double p, int ID) {
+    public void ModificarPrecio(double p, int ID) {
         indice = ID - 1;
         articulos[indice].setPrecio(p);
     }
 
-    public static void buscarArticulo(String nombre) {
+    public void buscarArticulo(String nombre) {
         // Recorremos el array con un bucle
         for (int i = 0; i < articulos.length; i++) {
             // Transformamos temporalmente las variables a minusculas para que sean iguales
@@ -48,7 +53,7 @@ public class almacen {
         }
     }
 
-    public static void recibir(int ID, int cantidad) {
+    public void recibir(int ID, int cantidad) {
         // Para el usuario el array empieza por 1 asi que le quitamos un valor
         indice = ID - 1;
         // Creamos una variable para guardar la cantidad del articulo
@@ -57,7 +62,7 @@ public class almacen {
         articulos[indice].setCantidad((cantidad + c));
     }
 
-    public static void devolver(int ID, int cantidad) {
+    public void devolver(int ID, int cantidad) {
         // Para el usuario el array empieza por 1 asi que le quitamos un valor
         indice = ID - 1;
         // Creamos una variable para guardar la cantidad del articulo
@@ -65,5 +70,4 @@ public class almacen {
         // Le damos un nuevo valor a la cantidad inicial
         articulos[indice].setCantidad((cantidad - c));
     }
-
 }

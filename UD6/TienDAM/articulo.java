@@ -21,9 +21,11 @@ public class articulo {
         cont++;
     }
 
-    //Creamos un contador que llame a los setters para ponerle valores a los atributos
+    // Creamos un contador que llame a los setters para ponerle valores a los
+    // atributos
     public articulo(String nombre, double precio, porcentajes iva, int cantidad, int cont) {
-        //Este constructor se llama al crear un articulo, por tanto llamamos al metodo que le suma al contador
+        // Este constructor se llama al crear un articulo, por tanto llamamos al metodo
+        // que le suma al contador
         this(cont);
         this.nombre = nombre;
         this.precio = precio;
@@ -65,31 +67,32 @@ public class articulo {
     }
 
     // Metodos
-    public static void aumentar(int cantidad) {
+    public void aumentar(int cantidad) {
         cantidad++;
     }
 
-    public static void disminuir(int cantidad) {
+    public void disminuir(int cantidad) {
         cantidad--;
     }
 
     public void ver(int i) {
         if (iva == porcentajes.ventiuno) {
-            System.out.println("El articulo" + (i+1) + "es: " + nombre + " cuesta " + precio + "€, tiene un "
+            System.out.println("El articulo" + (i + 1) + "es: " + nombre + " cuesta " + precio + "€, tiene un "
                     + "21% de IVA y tenemos" + cantidad + " en el almacén");
         }
         if (iva == porcentajes.diez) {
-            System.out.println("El articulo" + (i+1) + " es: " + nombre + " cuesta " + precio + "€, tiene un "
+            System.out.println("El articulo" + (i + 1) + " es: " + nombre + " cuesta " + precio + "€, tiene un "
                     + "10% de IVA y tenemos" + cantidad + " en el almacén");
         }
         if (iva == porcentajes.cuatro) {
-            System.out.println("El articulo" + (i+1) + " es: " + nombre + " cuesta " + precio + "€, tiene un "
+            System.out.println("El articulo" + (i + 1) + " es: " + nombre + " cuesta " + precio + "€, tiene un "
                     + "4% de IVA y tenemos" + cantidad + " en el almacén");
         }
     }
+
     public static void mostrar(articulo array[]) { // Metodo para visualizar el array
         for (int i = 0; i < array.length; i++) {
-           array[i].ver(i);
+            array[i].ver(i);
         }
-   }
+    }
 }
