@@ -10,7 +10,8 @@ public class almacen {
     private int cont = 0;
     // Y creamos otra para que el usuario ponga el lugar que quiera
     private int indice = 0;
-    //Getters y Setters
+
+    // Getters y Setters
     public articulo[] getArticulos() {
         return articulos;
     }
@@ -46,7 +47,7 @@ public class almacen {
             // Transformamos temporalmente las variables a minusculas para que sean iguales
             // Utilizamos el metodo "contains" para ver si contiene un subString que ha
             // puesto el usuario
-            if (articulos[i].getNombre().toLowerCase().contains(nombre.toLowerCase())) {
+            if (articulos[i].getNombre().toLowerCase().trim().contains(nombre.toLowerCase().trim())) {
                 System.out.println("Artículo encontrado:");
                 articulo.mostrar(articulos);
             }
