@@ -8,7 +8,6 @@ public class TienDAM {
     static Scanner lector = new Scanner(System.in);
     // Y otra estatica también de almacén
     static almacen almacen = new almacen();
-
     public static void main(String[] args) {
 
     }
@@ -54,13 +53,13 @@ public class TienDAM {
         // Mostramos las opciones
         System.out.println("");
         System.out.println("----------------------");
-        System.out.println("1. Ver");
-        System.out.println("2. Buscar");
-        System.out.println("3. Añadir");
-        System.out.println("4. Quitar");
-        System.out.println("5. Modificar");
-        System.out.println("6. Recibir");
-        System.out.println("7. Devolver");
+        System.out.println("1. Ver los articulos");
+        System.out.println("2. Buscar un articulo");
+        System.out.println("3. Añadir un articulo");
+        System.out.println("4. Quitar un articulo");
+        System.out.println("5. Modificar el precio de un articulo");
+        System.out.println("6. Recibir un articulo");
+        System.out.println("7. Devolver un articulo");
         System.out.println("");
         System.out.println("----------------------");
         // Le pedimos al usuario que escoja la opción que quiera
