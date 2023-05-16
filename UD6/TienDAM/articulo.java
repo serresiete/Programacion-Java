@@ -1,7 +1,6 @@
 package TienDAM;
 
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 
 //Creamos un enumerado para el IVA
 enum porcentajes {
