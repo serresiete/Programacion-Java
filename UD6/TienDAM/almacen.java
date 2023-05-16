@@ -80,7 +80,7 @@ public class almacen {
                     articuloEncontrado = true;
                 }
                 
-                articulos.get(i).mostrar();
+                articulos.get(i).mostrar(articulos);
             }
         }
         
