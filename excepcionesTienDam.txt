@@ -1,0 +1,3 @@
+- Cada vez que pido datos que no sean String
+- Cada vez que le pongo al ArrayList la posicion
+- En los switch de los menú

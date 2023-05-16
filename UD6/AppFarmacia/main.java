@@ -15,6 +15,6 @@ public class main {
         // Muestra por pantalla los datos de cada trabajador
         System.out.println(trabajadores);
         System.out.println(medicamentos); 
-
+ 
     }
 }

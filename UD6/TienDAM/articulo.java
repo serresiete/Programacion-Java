@@ -1,5 +1,8 @@
 package TienDAM;
 
+import java.util.ArrayList;
+import java.util.InputMismatchException;
+
 //Creamos un enumerado para el IVA
 enum porcentajes {
     ventiuno,
@@ -16,6 +19,10 @@ public class articulo {
     private int cantidad;
 
     // Constructores
+    public articulo() {
+
+    }
+
     // Creamos un constructor que le sume uno al contador
     public articulo(int cont) {
         cont++;
@@ -27,10 +34,15 @@ public class articulo {
         // Este constructor se llama al crear un articulo, por tanto llamamos al metodo
         // que le suma al contador
         this(cont);
-        this.nombre = nombre;
-        this.precio = precio;
-        this.iva = iva;
-        this.cantidad = cantidad;
+        setCantidad(cantidad);
+        setIva(iva);
+        setNombre(nombre);
+        try{
+            setPrecio(precio);
+        } catch(Exception e){
+            System.out.println("Vuelve a introducir un precio valido");
+            TienDAM.infoañadir();
+        }
     }
 
     // Getters y Setters
@@ -62,8 +74,12 @@ public class articulo {
         this.nombre = nombre;
     }
 
-    public void setPrecio(double precio) {
-        this.precio = precio;
+    public void setPrecio (double precio) throws Exception{
+        if (precio <= 0){
+            throw new Exception("ERROR. El precio no puede ser menor o igual que 0") ;
+        } else {
+            this.precio = precio;
+        }
     }
 
     // Metodos
@@ -77,22 +93,22 @@ public class articulo {
 
     public void ver(int i) {
         if (iva == porcentajes.ventiuno) {
-            System.out.println("El articulo" + (i + 1) + "es: " + nombre + " cuesta " + precio + "€, tiene un "
-                    + "21% de IVA y tenemos" + cantidad + " en el almacén");
+            System.out.println("El articulo " + (i + 1) + " es: " + nombre + " cuesta " + precio + "€, tiene un "
+                    + "21% de IVA y tenemos " + cantidad + " en el almacén");
         }
         if (iva == porcentajes.diez) {
-            System.out.println("El articulo" + (i + 1) + " es: " + nombre + " cuesta " + precio + "€, tiene un "
-                    + "10% de IVA y tenemos" + cantidad + " en el almacén");
+            System.out.println("El articulo " + (i + 1) + " es: " + nombre + " cuesta " + precio + "€, tiene un "
+                    + "10% de IVA y tenemos " + cantidad + " en el almacén");
         }
         if (iva == porcentajes.cuatro) {
-            System.out.println("El articulo" + (i + 1) + " es: " + nombre + " cuesta " + precio + "€, tiene un "
-                    + "4% de IVA y tenemos" + cantidad + " en el almacén");
+            System.out.println("El articulo " + (i + 1) + " es: " + nombre + " cuesta " + precio + "€, tiene un "
+                    + "4% de IVA y tenemos " + cantidad + " en el almacén");
         }
     }
 
-    public static void mostrar(articulo array[]) { // Metodo para visualizar el array
-        for (int i = 0; i < array.length; i++) {
-            array[i].ver(i);
+    public static void mostrar(ArrayList<articulo> arrayList) { // Metodo para visualizar el array
+        for (int i = 0; i < arrayList.size(); i++) {
+            arrayList.get(i).ver(i);
         }
-    } 
+    }
 }
