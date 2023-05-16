@@ -3,7 +3,7 @@ package TienDAM;
 import java.util.InputMismatchException;
 //Importamos la clase Scanner
 import java.util.Scanner;
-
+ 
 public class TienDAM {
     // Creamos una variable escaner estática de escaner
     static Scanner lector = new Scanner(System.in);

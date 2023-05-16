@@ -1,7 +1,7 @@
 package TienDAM;
 
 import java.util.ArrayList;
-
+ 
 //Creamos un enumerado para el IVA
 enum porcentajes {
     ventiuno,
@@ -33,15 +33,15 @@ public class articulo {
         // Este constructor se llama al crear un articulo, por tanto llamamos al metodo
         // que le suma al contador
         this(cont);
-        setCantidad(cantidad);
-        setIva(iva);
-        setNombre(nombre);
         try{
             setPrecio(precio);
         } catch(Exception e){
             System.out.println("Vuelve a introducir un precio valido");
             TienDAM.infoañadir();
         }
+        setCantidad(cantidad);
+        setIva(iva);
+        setNombre(nombre);
     }
 
     // Getters y Setters

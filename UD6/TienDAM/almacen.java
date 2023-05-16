@@ -67,16 +67,28 @@ public class almacen {
     }
 
     public void buscarArticulo(String nombre) {
+        boolean articuloEncontrado = false;
+        
         for (int i = 0; i < articulos.size(); i++) {
-            // Transformamos temporalmente las variables a minusculas para que sean iguales
-            // Utilizamos el metodo "contains" para ver si contiene un subString que ha
-            // puesto el usuario
-            if (articulos.get(i).getNombre().toLowerCase().trim().contains(nombre.toLowerCase().trim())) {
-                System.out.println("Artículo encontrado:");
-                articulo.mostrar(articulos);
+            // Transformamos temporalmente las variables a minúsculas para comparar sin distinción de mayúsculas
+            String nombreArticulo = articulos.get(i).getNombre().toLowerCase().trim();
+            String nombreBuscado = nombre.toLowerCase().trim();
+            
+            if (nombreArticulo.contains(nombreBuscado)) {
+                if (!articuloEncontrado) {
+                    System.out.println("Artículos encontrados:");
+                    articuloEncontrado = true;
+                }
+                
+                articulos.get(i).mostrar();
             }
         }
+        
+        if (!articuloEncontrado) {
+            System.out.println("No se encontraron artículos con el nombre especificado.");
+        }
     }
+    
 
     public void recibir(int ID, int cantidad) {
         int c = 0;
