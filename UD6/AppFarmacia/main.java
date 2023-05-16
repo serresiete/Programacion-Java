@@ -14,7 +14,7 @@ public class main {
         medicamentos[] medicamentos = new medicamentos[50];
         // Muestra por pantalla los datos de cada trabajador
         System.out.println(trabajadores);
-        System.out.println(medicamentos);
+        System.out.println(medicamentos); 
 
     }
 }

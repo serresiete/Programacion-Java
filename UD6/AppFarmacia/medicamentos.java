@@ -214,7 +214,7 @@ public class medicamentos {
                 System.out.print("Dime si lo tienes en formato pastilla o jarabe. ");
                 lector.nextLine();
                 japas = lector.nextLine();
-                japas.toUpperCase();
+                japas.toUpperCase(); 
                 if (japas == "PASTILLA" || japas == "PASTILLAS") {
                     tipos = false;
                     comprobar = true;

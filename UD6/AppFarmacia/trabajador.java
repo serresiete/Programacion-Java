@@ -9,7 +9,7 @@ public class trabajador {
     public enum TipoCargo {
         jefe,
         encargado,
-        operario,
+        operario, 
         becario;
     }
 

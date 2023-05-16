@@ -1,4 +1,5 @@
 package TienDAM;
+import java.util.ArrayList;
 
 public class almacen {
     // Atributos
@@ -17,7 +18,7 @@ public class almacen {
     }
 
     // Metodos
-    // Creamos un metodo para añadir un articulo nuevo al almacen (al array de
+    // Creamos un metodo para añadir un articulo nuevo al almace"Profesor: " + nombre + " " + apellidos + " " + fechaNacimn (al array de
     // articulo)
     public void añadirArticulo(String nombre, double precio, porcentajes iva, int cantidad) {
         articulo a = new articulo(nombre, precio, iva, cantidad, cont);
@@ -71,4 +72,4 @@ public class almacen {
         // Le damos un nuevo valor a la cantidad inicial
         articulos[indice].setCantidad((cantidad - c));
     }
-}
+} 

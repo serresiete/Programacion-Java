@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class TienDAM {
     // Creamos una variable escaner estática de escaner
     static Scanner lector = new Scanner(System.in);
-    // Y otra estatica también de almacén
+    // Y otra estatica también de almacén 
     static almacen almacen = new almacen();
     public static void main(String[] args) {
 
