@@ -2,7 +2,7 @@ package TienDAM;
 
 import java.util.ArrayList;
 
-public class almacen {
+public class almacen { 
     // Atributos
     // Creamos el arraylist
     private ArrayList<articulo> articulos = new ArrayList<articulo>();

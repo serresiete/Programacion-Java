@@ -2,7 +2,7 @@ package TienDAM;
 
 import java.util.ArrayList;
  
-//Creamos un enumerado para el IVA
+//Creamos un enumerado para el IVA 
 enum porcentajes {
     ventiuno,
     diez,
